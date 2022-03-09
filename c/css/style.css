@@ -1,0 +1,709 @@
+html, body{margin:0; padding:0; color:#525252; font-family: Arial, sans-serif; font-size: 16px; height:100%; background:#c5d3dc;}
+
+img{border:0;}
+a{text-decoration:none; color:#b31500; outline:none;}
+a:hover{color:black;}
+.break{clear:both; height: 0px;}
+input{outline:none;}
+textarea{resize:none;outline:none;}
+span.red{color:red;}
+
+a, #preloader, #mapContainer .wml-info-window div.content div.btn, #map, #carManage div.container div.window div.info div.manage div.item, #chat div.close, #clientsList div.container div.person div.addOutput div.line.title div.item{-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;}
+
+/* BODY Container */
+/*#body{width:100%; min-width:980px; min-height:100%; height: auto !important; height:100%; z-index:0; position:relative;}*/
+#body{width:100%; height:100%; z-index:0; position:relative; overflow:hidden;}
+
+/* FOOTER */
+#footer{width:100%; height:40px; position:absolute; bottom:0; left:0; right:0; z-index:5000;}
+#footer div.container{margin:0px 10px 0px 10px; height:22px; padding:4px 4px 0 4px; background:url('/images/black50.png'); border:1px solid white; border-radius:4px; color:white;}
+#footer div.container div.time{float:left; font-size:12px;}
+#footer div.container div.statistic{float:right;}
+#footer div.container div.statistic div{height: 16px; float:left; background:url('/images/black50.png'); border-radius:4px; padding:2px 8px 0 8px; margin:0 0 0 10px; font-size:12px;}
+#footer div.container div.statistic div span.all{color: #56b4db;}
+#footer div.container div.statistic div span.online{color: #79c60c;}
+#footer div.container div.statistic div span.web{color: #FFAD00;}
+#footer div.container div.statistic div span.activated{color: #FFAD00;}
+#footer div.container div.statistic div span.error{color: #F00;}
+
+/* Preloader */
+#preloader{width:100%; height:100%; position:absolute; top:0; left:0; z-index:10000;}
+#preloader div.container{margin:10px; background:url('/images/white50.png'); border-radius:6px; box-shadow: 2px 2px 16px #777;}
+#preloader div.container div.content{width:210px; height:100px; position:absolute;}
+#preloader div.container div.content div.icon{width:64px; height:64px; background:url('/images/preloader.gif') no-repeat center center; margin: 0 auto 8px auto;}
+#preloader div.container div.content div.status{text-align:center; text-transform:uppercase; font-size:12px;}
+#preloader div.container div.content div.status div.sub{font-size: 10px; color: #888888;}
+
+/* MAP Container */
+#mapContainer{width:100%; height:100%; position:absolute; top:0; left:0; z-index:1000; opacity:0;}
+#map{width:100%; height:100%; position:relative;}
+#mapContainer .wml-copyright-text{display:none;}
+#mapContainer .wml-zoom-label-container{display:none;}
+#mapContainer .wml-cluster-marker-content{font-size:18px;}
+
+/* MARKER INFO WINDOW */
+#mapContainer .wml-info-window{position:relative; width:200px;}
+#mapContainer .wml-info-window .wml-info-window-content{background:url('/images/white70.png'); border-radius:4px; border:1px solid #ababab; box-shadow: 2px 2px 9px #777; padding:0;}
+#mapContainer .wml-info-window .wml-info-window-tip{display:none;}
+#mapContainer div.header{height:22px; padding:6px 0 0 4px; background:url('/images/block-header-background.png') repeat-x left bottom; color:white; text-transform:uppercase; font-size:16px;}
+#mapContainer div.header div.touch{cursor:pointer; padding:0 40px 0 0; color:white;}
+#mapContainer .wml-info-window .wml-info-window-close{width:22px; height:22px; position:absolute; top:3px; right:3px; background:url('/images/map/info-window-close.png') no-repeat left top; cursor:pointer; padding:0; margin:0;}
+#mapContainer .wml-info-window .wml-info-window-close.over{background-position:left bottom;}
+
+#mapContainer .wml-info-window div.content{padding:4px;}
+#mapContainer .wml-info-window div.content div.line{margin:0 0 8px 0;}
+#mapContainer .wml-info-window div.content div.line span.field{color:#5a5a5a; font-size:12px; float:left; width:80px;}
+#mapContainer .wml-info-window div.content div.line span.value{color:#5a5a5a; font-size:14px; font-weight:bold; float:left;}
+#mapContainer .wml-info-window div.content div.line span.value.error{color:red;}
+#mapContainer .wml-info-window div.content div.btn{width:100%; height:19px; text-align: center; font-size: 14px; text-transform: uppercase; color: white; padding: 7px 0 0 0; background:url('/images/function-items-background.png') repeat-x left top; cursor:pointer; margin: 4px 0 0 0;}
+#mapContainer .wml-info-window div.content div.btn.over{background-position:left center;}
+#mapContainer .wml-info-window div.content div.btn.follow{font-size:12px;}
+
+#mapContainer .wml-info-window div.tip{width:10px; height:100%; background:url('/images/map/info-window-arrow.png') no-repeat left center; overflow: auto; position: absolute; top:0; right: -9px;}
+
+#mapContainer .infoWindow.disabled div.content div.btn{cursor:default; opacity:.5; background-position: left bottom;}
+
+div.carColor{width:180px; height:70px; position:relative; margin:auto; background-repeat: no-repeat; background-position: center top;}
+div.carColor.black{background-image: url('/images/car/black.png');}
+div.carColor.gray{background-image: url('/images/car/gray.png');}
+div.carColor.lightgray{background-image: url('/images/car/lightgray.png');}
+div.carColor.white{background-image: url('/images/car/white.png');}
+div.carColor.red{background-image: url('/images/car/red.png');}
+div.carColor.deepblue{background-image: url('/images/car/deepblue.png');}
+
+div.carColor.VW.black{background-image: url('/images/car/VW-black.png');}
+div.carColor.VW.gray{background-image: url('/images/car/VW-gray.png');}
+div.carColor.VW.lightgray{background-image: url('/images/car/VW-lightgray.png');}
+div.carColor.VW.white{background-image: url('/images/car/VW-white.png');}
+div.carColor.VW.red{background-image: url('/images/car/VW-red.png');}
+div.carColor.VW.deepblue{background-image: url('/images/car/VW-deepblue.png');}
+
+
+
+/* LOGO */
+#logo{width:275px; height:125px; background:url('/images/anytime.png'); position:absolute; top:0px; left:10px; z-index:5000; opacity:0;}
+
+/* CONTROL PANEL */
+#controlPanel{position:absolute; top:0; left:0; right:0; z-index:3000;}
+#controlPanel div.block{width:auto; height:auto; background:url('/images/white70.png'); position:absolute; border-radius:2px; border:1px solid #ababab; box-shadow: 2px 2px 9px #777; opacity:0;}
+#controlPanel div.block div.header{height:22px; padding:6px 0 0 4px; background:url('/images/block-header-background.png') repeat-x left bottom; color:white; text-transform:uppercase; font-size:16px;}
+#controlPanel div.block div.header.over{background-position:left top;}
+#controlPanel div.block div.header div.touch{cursor:pointer; padding:0 40px 0 0;}
+#controlPanel div.block div.header div.slide{width:22px; height:22px; position:absolute; top:3px; right:3px; background:url('/images/block-slide-icon.png') no-repeat left top; cursor:pointer;}
+#controlPanel div.block div.header div.slide.over{background-position:right top;}
+#controlPanel div.block div.header div.slide.slideDown{background-position:left bottom;}
+#controlPanel div.block div.header div.slide.slideDown.over{background-position:right bottom;}
+#controlPanel div.block div.container{padding:8px;}
+#controlPanel div.block div.container div.entry{font-size:10px;}
+
+/* MANAGERs ACCOUNT */
+#controlPanel div.block #signout{width:286px; height:26px; background:url('/images/signout.png') no-repeat left top; margin:10px auto 0 auto; cursor:pointer;}
+#controlPanel div.block #signout.over{background-position:left center;}
+#controlPanel div.block #signout.press{background-position:left bottom;}
+#controlPanel div.block div.title{font-size:20px;}
+#controlPanel div.block div.group{font-size:12px; color:gray;}
+
+/* Function List */
+#controlPanel div.block#functionList div.item{padding:4px 10px 0px 10px; height:22px; color:white; background:url('/images/function-items-background.png') repeat-x left top; float:left; margin:0 10px 0 0; cursor: pointer; border-radius: 2px; overflow: hidden;}
+#controlPanel div.block#functionList div.item.over{background-position:left center;}
+#controlPanel div.block#functionList div.item.last{margin:0;}
+#controlPanel div.block#functionList div.item.disabled{opacity:.5; cursor:default; background-position:left bottom;}
+
+/* Statistic Block */
+#statistic{}
+#statistic div.container{padding: 4px;}
+#statistic div.item{border-bottom: 1px solid #ddd; padding: 0 0 0px 0;}
+#statistic div.item.last{border:0; margin:0; padding:0;}
+#statistic div.item div.name{width:200px; float:left; padding:2px 0; font-size: 14px;}
+#statistic div.item div.value{float:right; border-radius:4px; text-align:center; width: 20px; padding: 1px 0; margin: 1px 0 0 0; color: white; font-size: 14px;}
+#statistic div.item.all div.value{background: #999999;}
+#statistic div.item.rent div.value{background: #ff371c;}
+#statistic div.item.book div.value{background: #a1c50f;}
+#statistic div.item.service div.value{background: #f8be0c;}
+#statistic div.item.free div.value{background: #40a8d9;}
+#statistic div.item.web div.value, #statistic div.item.online div.value{color: #3D3D3D; background: none;}
+
+/* POPUP */
+div.popup{width:100%; height:100%; position:absolute; top:0; left:0; z-index:8000; color:white; display:none;}
+div.popup div.container{margin:10px; background:url('/images/white50.png'); border-radius:6px; box-shadow: 2px 2px 16px #777;}
+div.popup div.container div.window{position:absolute; background:url('/images/black70.png'); border-radius:4px; box-shadow: 2px 2px 16px #777; border:1px solid white;}
+div.popup div.container div.window div.header{height:34px; border-radius:4px; overflow:hidden; color:white;}
+div.popup div.container div.window div.header div.body{height:34px; background:url('/images/popup-header-background.png') repeat-x left top; position:relative;}
+div.popup div.container div.window div.header div.body div.name{font-size:16px; padding:8px 0 0 8px;}
+div.popup div.container div.window div.header div.body div.close{width:24px; height:24px; position:absolute; top:5px; right:5px; background:url('/images/popup-close.png') no-repeat left top; cursor:pointer;}
+div.popup div.container div.window div.header div.body div.close.over{background-position:left bottom;}
+div.popup div.container div.window div.header div.body div.back{position: absolute; top: 6px; right: 40px; height: 18px; text-transform: uppercase; background: #1F2F33; font-size: 12px; padding: 4px 10px 0 10px; border-radius: 4px; cursor: pointer; display: none;}
+div.popup div.container div.window div.header div.body div.back:hover{background: #2C4247;}
+/* CAR MANAGE */
+#carManage{display:none;}
+#carManage div.container div.window div.header div.body div.name{text-transform:uppercase;}
+
+#carManage div.container div.window div.car{width:210px; height:448px; margin: 50px 0 0 0; background:url('/images/carmanage/car-body.png') no-repeat left top; float:left; position:relative;}
+#carManage div.container div.window div.car div.lock{width:210px; height:80px; background:url('/images/carmanage/car-lock.png') no-repeat left top; position:absolute; top: 204px; left:0;}
+#carManage div.container div.window div.car div.lock{background-position:left top;}
+#carManage div.container div.window div.car div.lock.active{background-position:left bottom;}
+
+#carManage div.container div.window div.car div.engine{width:210px; height:56px; background:url('/images/carmanage/car-engine.png') no-repeat left top; position:absolute; top: 48px; left:0;}
+#carManage div.container div.window div.car div.engine{background-position:left top;}
+#carManage div.container div.window div.car div.engine.active{background-position:left bottom;}
+
+#carManage div.container div.window div.info{width:440px; padding: 10px 0 0 0; float:right;}
+#carManage div.container div.window div.info div.status{height:50px; background:url('/images/carmanage/car-service.png') no-repeat left top; padding:8px 0 0 60px;}
+#carManage div.container div.window div.info div.status div.sub{font-size:12px; color:gray;}
+#carManage div.container div.window div.info div.events{}
+#carManage div.container div.window div.info div.events div.item{width:130px; height:38px; background:url('/images/carmanage/event-icons.png') no-repeat; padding:0 0 0 50px; margin:8px 0 0 0; float:left;}
+#carManage div.container div.window div.info div.events div.item.error{color:red;}
+#carManage div.container div.window div.info div.events div.item div.name{font-size:18px;}
+#carManage div.container div.window div.info div.events div.item div.sub{font-size:10px; color:#acacac;}
+
+#carManage div.container div.window div.info div.vehicle_number{text-transform: uppercase; font-size: 28px; padding: 4px 0; text-align: center; margin: 0 10px 6px 0; border-radius: 6px; color: #525252; font-weight: bold;}
+#carManage div.container div.window div.info div.vehicle_number.rent{background: #fc3318;}
+#carManage div.container div.window div.info div.vehicle_number.book{background: #a0c40f;}
+#carManage div.container div.window div.info div.vehicle_number.free{background: #40a7d7;}
+#carManage div.container div.window div.info div.vehicle_number.service{background: #faca08;}
+
+
+#carManage div.container div.window div.info div.time{float: left;}
+#carManage div.container div.window div.info div.time div.name{float: left; font-size: 12px; padding: 2px 10px 0 0; text-transform: uppercase;}
+#carManage div.container div.window div.info div.time div.value{float: left;}
+
+#carManage div.container div.window div.info div.active{float: right; margin: 0 14px 0 0;}
+#carManage div.container div.window div.info div.active.online{color: #96b12c;}
+#carManage div.container div.window div.info div.active.offline{color: #ff0000;}
+
+#carManage div.container div.window div.info div.events div.item.power{background-position:left top;}
+#carManage div.container div.window div.info div.events div.item.fuel{background-position:left -76px;}
+#carManage div.container div.window div.info div.events div.item.interier{background-position:left -38px;}
+#carManage div.container div.window div.info div.events div.item.speed{background-position:left -114px;}
+
+#carManage div.container div.window div.info div.manageTitle{margin: 0px 10px 0 0; padding: 6px 0; border-top: 1px solid #777; border-bottom: 1px solid #777;}
+#carManage div.container div.window div.info div.manage{width:440px; float:right; margin:0px 0 0 0; position: relative;}
+#carManage div.container div.window div.info div.manage div.item{height:30px; background:black; border:1px solid black; border-radius:4px; padding:0; margin:8px 10px 0 0; cursor:pointer; overflow: hidden;}
+#carManage div.container div.window div.info div.manage div.item div.icon{width:36px; height: 30px; background: url('/images/carmanage/manage.png') no-repeat; float: left; margin: 0 10px 0 0;}
+#carManage div.container div.window div.info div.manage div.item div.name{float:left; padding: 6px 0 0 0;}
+#carManage div.container div.window div.info div.manage div.item:hover{border:1px solid #4fb7d5;}
+#carManage div.container div.window div.info div.manage div.item.engine div.icon{background-position:left top;}
+#carManage div.container div.window div.info div.manage div.item.lock div.icon{background-position:left -30px;}
+#carManage div.container div.window div.info div.manage div.item.alarm div.icon{background-position:left -60px;}
+#carManage div.container div.window div.info div.manage div.item.preloader{background: url('/images/manage-button-preloader.gif'); color: #777;}
+#carManage div.container div.window div.info div.manage div.item.preloader:hover{border: 1px solid black;}
+
+/* CAR MANAGE TYPE */
+#carManage div.container div.window div.info div.manage div.type{padding: 4px 10px; position: absolute; top: -29px; right: 10px; background: #2E95CF; border-radius: 4px; cursor: pointer; display: block;}
+#carManage div.container div.window div.info div.manage div.type:hover{background: #23709B;}
+#carManage.offline div.container div.window div.info div.manage div.type{display: none;}
+#carManage div.container div.window div.info div.manage div.tcp{display: block;}
+#carManage div.container div.window div.info div.manage div.sms{display: none;}
+#carManage div.container div.window div.info div.manage div.sms div.output{margin: 6px 0 0 0; display: none; font-size: 12px;}
+#carManage div.container div.window div.info div.manage div.block{display: block;}
+#carManage div.container div.window div.info div.manage div.bmw{display: none;}
+#carManage.sms div.container div.window div.info div.manage div.tcp{display: none;}
+#carManage.sms div.container div.window div.info div.manage div.sms{display: block;}
+#carManage.bmw div.container div.window div.info div.manage div.tcp{display: none;}
+#carManage.bmw div.container div.window div.info div.manage div.sms{display: none;}
+#carManage.bmw div.container div.window div.info div.manage div.bmw{display: block;}
+#carManage div.container div.window div.info div.manage div.mercedes{display: none;}
+#carManage.mercedes div.container div.window div.info div.manage div.mercedes{display: block;}
+#carManage.mercedes div.container div.window div.info div.manage div.tcp{display: none;}
+#carManage.mercedes div.container div.window div.info div.manage div.sms{display: none;}
+#carManage.mercedes div.container div.window div.info div.manage div.type{display: none;}
+#carManage.bmw div.container div.window div.info div.manage div.type{display: none;}
+
+#carManage div.container div.window div.info div.manage div.someCommand{margin: 10px 10px 0 0; background: black; padding: 8px 0 0 4px; border-radius: 4px; height: 32px;}
+#carManage div.container div.window div.info div.manage div.someCommand input{width: 374px; height: 24px; border: 1px solid #555; border-radius: 4px; float: left; margin: 0 6px 0 0; background: #444; color: white; padding: 0 0 0 4px;}
+#carManage div.container div.window div.info div.manage div.someCommand div.submit{float: left; width: 34px; height: 18px; padding: 8px 0 0 0; background: #444; border-radius: 4px; text-transform:uppercase; text-align: center; cursor: pointer; font-size:12px;}
+#carManage div.container div.window div.info div.manage div.someCommand div.submit:hover{background: #79c60c;}
+
+#carManage div.container div.window div.footer{width:100%; height:44px; position:absolute; bottom:0px; left:0; border-radius:4px; overflow:hidden;}
+#carManage div.container div.window div.footer div.body{height:44px; padding:8px 10px 0 10px; background:url('/images/popup-footer-background.png') repeat-x left top; position:relative;}
+#carManage div.container div.window div.footer div.body div.item{width:144px; margin:0 20px 0 0; background:url('/images/popup-footer-line.png') no-repeat right center; float:left;}
+#carManage div.container div.window div.footer div.body div.item.last{margin:0; background-image:none;}
+#carManage div.container div.window div.footer div.body div.item div.name{font-size:14px;}
+#carManage div.container div.window div.footer div.body div.item div.value{font-size:12px; color:#bebebe; text-transform: uppercase;}
+
+#carManage #carRent{border-top: 1px solid #777; padding: 8px 0 0 0; margin: 8px 10px 0 0;}
+#carRent select{width: 94px; float: left; text-transform: uppercase;}
+#carRent input.submit{width: 90px; height: 24px; display: block; float: left; background: #56b4db; color: #ffffff; text-transform: uppercase; font-size: 12px; border: 0; border-radius: 2px; padding: 2px 10px; cursor: pointer;}
+#carRent input.submit:hover{background: #1A5E7A;}
+
+#carManage div.subFunc{padding: 10px 0; clear: both;}
+#carManage div.subFunc div.item{width: 200px; margin: 0 6px 0 0; padding: 6px 0; float: left; background: #FACA08; color: #000; font-size: 12px; border-radius: 4px; text-align: center; text-transform: uppercase; cursor: pointer;}
+#carManage div.subFunc div.item:hover{background: #D69D22;}
+#carManage div.subFunc div.selectRounting{display: none; padding: 4px 0 0 0; border-top: 1px solid #918F8F; margin: 8px 10px 0 0;}
+#carManage div.subFunc div.selectRounting div.inputBlock{float: left; margin: 0 14px 0 0; font-size: 12px; color: #B4B4B4;}
+#carManage div.subFunc div.selectRounting div.inputBlock div.title{font-size: 12px; color: #B4B4B4;}
+#carManage div.subFunc div.selectRounting div.inputBlock input{border: 0px; border-radius: 4px; padding: 4px 0; width: 94px; text-align: center;}
+#carManage div.subFunc div.selectRounting div.inputBlock.time input{width: 30px;}
+#carManage div.subFunc div.selectRounting div.inputBlock.step input{width: 40px;}
+#carManage div.subFunc div.selectRounting div.submit{width: 108px; margin: 16px 0 0 0; padding: 4px 0; float: left; border-radius: 4px; background: #84A51A; text-transform: uppercase; text-align: center; color: #FFF; font-size: 12px; cursor: pointer;}
+#carManage div.subFunc div.selectRounting div.submit:hover{background: #6B8614;}
+
+#carManage div.rentList{display: none;}
+#carManage div.rentList div.line{}
+#carManage div.rentList div.list{display: none; height: 502px; overflow: auto;}
+#carManage div.rentList div.list div.line{background: rgba(0, 0, 0, .6); border-top: 1px solid #474747; border-bottom: 1px solid #000; -webkit-transition: background .3s;}
+#carManage div.rentList div.list div.line:hover{background: rgba(48, 47, 44, .6);}
+#carManage div.rentList div.line.title{background: rgba(0, 0, 0, .5); padding: 6px 0px; border-bottom: 1px solid #585858;}
+#carManage div.rentList div.line div.item{float: left; font-size: 12px; text-transform: uppercase; padding: 4px;}
+#carManage div.rentList div.list div.line div.item{text-transform: none;}
+#carManage div.rentList div.line div.num{width: 20px;}
+#carManage div.rentList div.line div.client{width: 200px;}
+#carManage div.rentList div.line div.client div.phone{font-size: 12px; color: gray;}
+#carManage div.rentList div.line div.start{width: 122px;}
+#carManage div.rentList div.list div.line div.start{background: url('/images/red-arrow.png') no-repeat 118px center;}
+#carManage div.rentList div.line div.end{width: 146px;}
+#carManage div.rentList div.list div.line div.end{background: url('/images/red-arrow.png') no-repeat 130px center;}
+#carManage div.rentList div.line div.duration{width: 104px;}
+#carManage div.rentList div.list div.line div.duration{font-size: 14px;}
+#carManage div.rentList div.line div.amount{width: 80px;}
+#carManage div.rentList div.line div.rentRouting{width: 80px; text-align: center;}
+#carManage div.rentList div.line div.rentRouting div.touch{width: 32px; height: 32px; margin: auto; background: url('/images/routing.png') no-repeat center center; cursor: pointer;}
+
+#carManage div.rentList div.summary{padding: 10px; background: #383A2F; border-top: 1px solid #000;}
+#carManage div.rentList div.summary div.item{float: left; padding: 0 40px; font-size: 12px; color: #ddd;}
+#carManage div.rentList div.summary div.item.tit{font-size: 16px; text-transform: uppercase; color: #fff;}
+#carManage div.rentList div.summary div.item strong{color: #fff; font-size: 16px; padding: 0 10px;}
+
+/* SEARCH CLIENT */
+#carManage div.search{position: relative; float: left; margin: 0 4px;}
+#carManage div.search input.type{width: 224px; height: 24px; padding: 0 6px; border-radius: 2px; border: 1px solid #000000; background: rgba(0, 0, 0, 0.5); font-size: 14px; color: #ffffff;}
+#carManage div.search input.value{position: absolute; top: -40px; left: 0px; visibility: hidden;}
+#carManage div.search div.search_output{display: none; width: 224px; padding: 4px 4px 0 4px; position: absolute; border-radius: 2px; top: 26px; left: 4px; background: #000000;}
+#carManage div.search div.search_output div.item{height: 18px; padding: 4px 6px 0 6px; margin: 0 0 4px 0; border-radius: 2px; background: #303030; font-size: 12px; cursor: pointer;}
+#carManage div.search div.search_output div.item:hover{background: #525252;}
+#carManage div.search div.search_output div.no_results{padding: 6px; font-style: italic; font-size: 12px;}
+
+
+/* CLIENTS LIST */
+#clientsList{}
+#clientsList div.container{}
+#clientsList div.container div.content{font-size:14px;}
+#clientsList div.container div.content div.list{height:486px; overflow:auto; display:none;}
+#clientsList div.container div.content div.list div.cont div.searchOutput{padding: 10px 0; text-align: center; text-transform: uppercase;}
+
+#clientsList.listActive div.container div.content div.list{display:block;}
+
+#clientsList div.container div.window div.header div.search{position: absolute; top: 4px; right: 32px; display: none;}
+#clientsList div.container div.window div.header div.search input{width: 300px; font-size: 16px; padding: 2px 4px; border: 1px solid #4A4F53; border-radius: 4px; background: #627079; color:#fff;}
+
+#clientsList div.container div.line{color: #d1d9dc; border-top: 1px solid #5C594C; border-bottom: 1px solid #383530; background: rgba(0,0,0,0); -webkit-transition: background .3s; cursor: pointer;}
+#clientsList div.container div.list div.line:hover{background: rgba(0,0,0,.5);}
+#clientsList div.container div.line.title{border-bottom:1px solid #ddd; color:white; background: url('/images/black50.png');}
+#clientsList div.container div.line div.item{float:left; padding:8px 10px 8px 10px;}
+#clientsList div.container div.line div.item.end{padding:8px 0px 8px 10px;}
+
+#clientsList div.container div.line div.item.num{width:12px; text-align:center;}
+#clientsList div.container div.line div.item.login{width:126px; padding: 8px 4px 8px 10px}
+#clientsList div.container div.line div.item.email{width: 170px; font-size: 12px;}
+#clientsList div.container div.line div.item.name{width: 228px; color: #FFF; text-transform: uppercase; font-size: 14px;}
+#clientsList div.container div.line div.item.balance{width: 100px}
+#clientsList div.container div.line div.item.balance.low{color: #FC0000;}
+#clientsList div.container div.line div.item.balance.normal{color: #90D301;}
+#clientsList div.container div.line div.item.balance.high{color: #ECB400; font-weight: bold; font-size: 16px;}
+#clientsList div.container div.line div.item.levent{width:70px;}
+#clientsList div.container div.line div.item.rent_count{width:74px}
+#clientsList div.container div.line div.item.rate{width:30px;}
+#clientsList div.container div.line div.item.edit{color: #FFF; cursor: pointer; background: #88B834; border-radius: 4px; padding: 4px 10px; text-transform: uppercase; text-decoration: none; text-align: center; margin: 6px 0 0 0; font-size: 12px;}
+
+#clientsList div.container form.editBlock{display:block; position: relative;}
+#clientsList div.container form.editBlock input.submit{visibility:hidden; height:0px; position: absolute; top: 0px; left: 0px;}
+#clientsList.listActive div.container form.editBlock{display:none;}
+#clientsList div.container form.editBlock div.block{float: left; width: 404px; background: rgba(0, 0, 0, .3); border-radius: 4px; margin: 6px;}
+#clientsList div.container form.editBlock div.line{height: 26px; padding: 4px 0; border: 0px;}
+#clientsList div.container form.editBlock div.line div.name{width:160px; float:left; padding: 4px 0 6px 10px; font-size: 12px;}
+#clientsList div.container form.editBlock div.line input{width:220px; border: 1px solid #ddd; border-radius: 2px; padding: 0 0 0 6px; height: 20px; font-size: 14px;}
+
+#clientsList div.container form.editBlock div.line.comment{height: auto; margin: 0 6px; border-radius: 4px; background: rgba(0, 0, 0, .4);}
+#clientsList div.container form.editBlock div.line.comment textarea{width: 638px; height: 80px; border: 1px solid #DDD; border-radius: 2px; padding: 0 0 0 6px; font-size: 14px;}
+
+#clientsList div.container form.editBlock div.button{padding: 10px 166px; float: left; background: #6F9E12; margin: 0 0px 3px 8px; border-radius: 4px; color: white; cursor:pointer; text-transform: uppercase; font-size: 12px;}
+#clientsList div.container form.editBlock div.button:hover{background: #6c8c2e;}
+
+#clientsList div.container div.carRent{padding: 10px; background: rgba(0, 0, 0, .4); border-radius: 4px; margin: 6px;}
+#clientsList div.container div.carRent div.item{color: #DBC89E; font-size: 10px;}
+#clientsList div.container div.carRent div.item span{color: white; font-size: 14px;}
+
+#clientsList div.container div.person{height: 466px; overflow: auto; padding: 10px 0; display: none;}
+#clientsList div.container div.person div.recoveryBlock{margin: 10px;}
+#clientsList div.container div.person div.recoveryBlock div.tit{color: #F90; text-transform: uppercase; padding: 0 0 0 2px;}
+#clientsList div.container div.person div.recoveryBlock div.content{padding: 10px; background: rgba(0, 0, 0, .4); border-radius: 4px;}
+
+#clientsList div.container div.person div.recovery{background: #888888; border-radius: 6px; width: 404px; padding: 6px 0px; margin: 6px 0; text-align: center;
+color: #FFF; text-transform: uppercase; cursor: pointer;}
+#clientsList div.container div.person div.recovery:hover{background: #757575;}
+#clientsList div.container div.person div.recoveryOutput{padding: 10px;}
+
+#clientsList div.container div.person div.funcTitle{border-bottom: 1px solid #ddd; padding: 6px 0; margin: 0 6px;}
+#clientsList div.container div.person div.func{float: left; width: 404px; text-align: center; padding: 6px 0; margin: 6px; background: #ECECEC; border-radius: 6px; color: #505050; cursor: pointer; text-transform: uppercase;}
+#clientsList div.container div.person div.func:hover{color: white; background: #C2C1C1;}
+#clientsList div.container div.person div.addOutput{padding: 10px 0;}
+#clientsList div.container div.person div.addOutput div.line{border-top: 1px solid #6B6962; border-bottom: 1px solid #2E2B2B; background: rgba(0,0,0,0); -webkit-transition: background .5s;}
+#clientsList div.container div.person div.addOutput div.line:hover{background: rgba(0,0,0,.5);}
+#clientsList div.container div.person div.addOutput div.line.title{border-top: 0px; border-bottom: 0px; background: black;}
+#clientsList div.container div.person div.addOutput div.line.title:hover{background: black;}
+#clientsList div.container div.person div.addOutput div.line.title div.item{text-transform: uppercase; font-size: 12px;}
+#clientsList div.container div.person div.addOutput div.line.title div.item.sort{background: url('/images/sort.png') no-repeat right top; color: #80B412;}
+#clientsList div.container div.person div.addOutput div.line.title div.item.sort.asc{background-position: right top;}
+#clientsList div.container div.person div.addOutput div.line.title div.item.sort.desc{background-position: right bottom;}
+
+#clientsList div.container div.person div.addOutput div.line div.item{margin: 0 6px 0 0; float: left;}
+#clientsList div.container div.person div.addOutput div.line div.item.id{width: 104px; text-transform: uppercase; font-size: 12px;}
+#clientsList div.container div.person div.addOutput div.line div.item.action{width: 70px; text-align: center;}
+#clientsList div.container div.person div.addOutput div.line div.item.from{width: 120px;}
+#clientsList div.container div.person div.addOutput div.line div.item.to{width: 120px;}
+#clientsList div.container div.person div.addOutput div.line div.item.duration{width: 150px; text-align: center;}
+#clientsList div.container div.person div.addOutput div.line div.item.amount{width: 70px;}
+#clientsList div.container div.person div.addOutput div.line div.item.object_id{width: 30px; text-transform: uppercase;}
+#clientsList div.container div.person div.addOutput div.line div.item.order_id{width: 80px; text-transform: uppercase;}
+#clientsList div.container div.person div.addOutput div.line div.item.time{width: 160px;}
+#clientsList div.container div.person div.addOutput div.line div.item.message{width: 120px;}
+#clientsList div.container div.person div.addOutput div.line div.item.status{width: 120px;}
+
+#clientsList div.container div.person div.updateBalance{margin: 0 6px; padding: 8px; background: rgba(0,0,0,.5); border-radius: 4px 6px;}
+#clientsList div.container div.person div.updateBalance div.title{text-transform: uppercase;}
+#clientsList div.container div.person div.updateBalance input{width: 200px; height: 24px; border: 1px solid #ddd; background: white; border-radius: 4px; float: left; margin: 0 10px 0 0; padding: 0 6px;}
+#clientsList div.container div.person div.updateBalance div.button{padding: 6px 10px; text-transform: uppercase; font-size: 12px; background: #FF8F00; color: white; float: left; cursor: pointer; border-radius: 4px;}
+#clientsList div.container div.person div.updateBalance div.button:hover{background: #CC7608;}
+
+#clientsList div.container div.person div.clientStatus{margin: 0 6px; padding: 8px; background: rgba(0,0,0,.5); border-radius: 4px 6px;}
+#clientsList div.container div.person div.clientStatus div.title{text-transform: uppercase; text-align: center; border-bottom: 1px solid #4E4E4E;}
+#clientsList div.container div.person div.clientStatus div.col{width: 396px; margin: 0 10px 0 0; float: left; text-align: center; padding: 10px 0 0 0;}
+#clientsList div.container div.person div.clientStatus div.col div.button{padding: 6px 10px; text-transform: uppercase; font-size: 12px; background: #FF8F00; color: white; cursor: pointer; border-radius: 4px;}
+#clientsList div.container div.person div.clientStatus div.col div.button:hover{background: #CC7608;}
+#clientsList div.container div.person div.clientStatus div.col div.status{padding: 6px 10px; text-transform: uppercase; font-size: 12px; color: white; border-radius: 4px;}
+#clientsList div.container div.person div.clientStatus div.col div.status.active{color: #76B418}
+#clientsList div.container div.person div.clientStatus div.col div.status.deactive{color: #CE4B19}
+
+/* CLIENT PANEL */
+#clientsList div.container div.person div.infoBlock{margin: 10px;}
+#clientsList div.container div.person div.infoBlock div.tit{color: #F90; text-transform: uppercase; padding: 0 0 0 2px;}
+#clientsList div.container div.person div.infoBlock div.content{padding: 10px; position: relative; border: 1px solid #888; background: rgba(0, 0, 0, .3); border-radius: 4px;}
+#clientsList div.container div.person div.infoBlock div.content div.block{width: 260px; float: left;}
+#clientsList div.container div.person div.infoBlock div.content div.block div.name{}
+#clientsList div.container div.person div.infoBlock div.content div.block div.value{font-size: 18px;}
+
+/* CARS LIST */
+#carsList{}
+#carsList div.content{height:496px; overflow:auto;}
+#carsList div.line{border-bottom: 1px solid #5f5f5f; background: rgba(0,0,0,0); -webkit-transition: background .3s;}
+#carsList div.line:hover{background: rgba(0,0,0,.4);}
+#carsList div.line.expand{background: rgba(0,0,0,.4);}
+
+#carsList div.line div.col{width: 150px; float: left;}
+
+#carsList div.line div.col.brand{width: 60px; height: 80px; background-repeat: no-repeat; background-position: center center;}
+#carsList div.line div.col.brand.VW{background-image: url('/images/brands/vw.png');}
+#carsList div.line div.col.brand.BMW{background-image: url('/images/brands/bmw.png');}
+#carsList div.line div.col.brand.Chevrolet{background-image: url('/images/brands/chevrolet.png');}
+#carsList div.line div.col.brand.Mercedes{background-image: url('/images/brands/mercedes.png');}
+#carsList div.line div.col.brand.Reno{background-image: url('/images/brands/reno.png?q=1');}
+
+#carsList div.line div.col.carColor{width: 180px; padding: 0px; margin: 0px;}
+
+/*#carsList div.line div.col.color{width:180px; height:80px; background:url('/images/car/black.png') no-repeat center center; border:0px; padding:0; margin:0;}
+#carsList div.line div.col.color.white{background:url('/images/car/white.png') no-repeat center center;}
+#carsList div.line div.col.color.black{background:url('/images/car/black.png') no-repeat center center;}
+#carsList div.line div.col.color.red{background:url('/images/car/red.png') no-repeat center center;}
+#carsList div.line div.col.color.lightgray{background:url('/images/car/lightgray.png') no-repeat center center;}
+#carsList div.line div.col.color.gray{background:url('/images/car/gray.png') no-repeat center center;}
+#carsList div.line div.col.color.deepblue{background:url('/images/car/deepblue.png') no-repeat center center;}*/
+
+#carsList div.line div.col.info{padding: 10px 0 0 0;}
+#carsList div.line div.col.info div.vehicle_number{text-transform: uppercase; font-size: 18px; font-weight: bold;}
+#carsList div.line div.col.info div.vehicle_number div.status{width: 16px; height: 16px; float: left; border-radius: 10px; margin: 0 8px 0 0;}
+#carsList div.line div.col.info div.vehicle_number div.status.rent{background: #e7320e;}
+#carsList div.line div.col.info div.vehicle_number div.status.book{background: #98be00;}
+#carsList div.line div.col.info div.vehicle_number div.status.free{background: #16aee7;}
+#carsList div.line div.col.info div.vehicle_number div.status.service{background: #fd9b00;}
+#carsList div.line div.col.info div.imei{text-transform: uppercase; font-size: 12px; color: #a5a5a5; height: 20px;}
+#carsList div.line div.col.info div.more{text-transform: uppercase; font-size: 10px; color: #e7e7e7; text-decoration: underline; cursor: pointer;}
+
+#carsList div.line div.col.manage{padding: 16px 0 0 0;}
+#carsList div.line div.col.manage div.button{padding: 6px 0 4px 0; border-radius: 6px; background: white; color: #454442; font-size: 16px; font-weight: bold; text-transform: uppercase; text-align: center; cursor: pointer;}
+#carsList div.line div.col.manage div.button:hover{background: #c9c9c9;}
+#carsList div.line div.col.manage div.active{float: left; font-weight: bold; font-size: 16px; text-transform: uppercase; text-align: center; padding: 6px 0 0 0;}
+#carsList div.line div.col.manage div.active.online{color: #96b12c;}
+#carsList div.line div.col.manage div.active.offline{color: #ff0000;}
+#carsList div.line div.col.manage div.web{float: right; font-weight: bold; font-size: 16px; text-transform: uppercase; text-align: center; padding: 6px 0 0 0;}
+#carsList div.line div.col.manage div.web.on{color: #FC0;}
+#carsList div.line div.col.manage div.web.off{color: #9C7D00;}
+
+#carsList div.line div.col.new{width: 60px;}
+#carsList div.line div.col.new div.value{margin: 20px 0 0 10px; padding: 4px 0; border-radius: 2px; background: rgba(0, 0, 0, .5); text-align: center; text-transform: uppercase; font-size: 14px;}
+
+#carsList div.line div.output{display: none; border-top: 1px solid #5f5f5f; font-size: 12px; color: #d1d1d1; background: rgba(0,0,0,.2); padding: 0px;}
+#carsList div.line div.output div.td{float: left; width: 220px; margin: 0 10px 0 0;}
+#carsList div.line div.output div.td div.tr{padding: 6px; border-bottom: 1px solid #444;}
+#carsList div.line div.output div.td div.tr div.name{float: left; padding: 0 10px 0 0;}
+#carsList div.line div.output div.td div.tr div.value{float: left; color: white; text-transform: uppercase;}
+
+#carsList div.line div.col.stat{width: 270px; padding: 10px;}
+#carsList div.line div.col.stat div.client{font-size: 12px;}
+#carsList div.line div.col.stat div.name{font-size: 12px; color: #D3B465; padding: 0 10px 0 0; float: left;}
+#carsList div.line div.col.stat div.time{font-size: 12px;}
+#carsList div.line div.col.stat div.status{text-transform: uppercase; padding: 6px 6px 4px 6px; background: rgba(0, 0, 0, .25); border-radius: 4px; margin: 0 0 4px 0;}
+#carsList div.line div.col.stat div.status.rent{border: 1px solid #BE7E1D;}
+#carsList div.line div.col.stat div.status div.name{font-size: 16px; color: #C2B7A4;}
+#carsList div.line div.col.stat div.status div.value{}
+
+#carsList div.line div.col.shortView{padding: 10px 10px 0 0;}
+#carsList div.line div.col.shortView div.item{font-weight: normal; color: #B9B19F; font-size: 14px;}
+#carsList div.line div.col.shortView div.item span{color: white;}
+#carsList div.line div.col.shortView div.item.map{background: #353434; padding: 4px; border-radius: 4px; font-size: 10px; text-transform: uppercase; text-align: center; margin: 6px 0 0 0; cursor: pointer; color: #AAB938;}
+#carsList div.line div.col.shortView div.item.map:hover{background: #1B1B1B;}
+
+/* BALANCE */
+#clientsList div.container div.person form.balanceSummary{margin: 10px;}
+#clientsList div.container div.person form.balanceSummary div.tit{color: #F90; text-transform: uppercase; padding: 0 0 0 2px;}
+#clientsList div.container div.person form.balanceSummary div.content{padding: 10px; position: relative; border: 1px solid #888; background: rgba(0, 0, 0, .3); border-radius: 4px;}
+
+#clientsList div.container div.person form.balanceSummary div.item{width: 260px; float: left;}
+#clientsList div.container div.person form.balanceSummary div.item div.name{font-size: 12px;}
+#clientsList div.container div.person form.balanceSummary div.item input{width: 240px; padding: 4px; border: 1px solid #DDD; border-radius: 4px;}
+#clientsList div.container div.person form.balanceSummary div.item div.submit{width: 251px; margin: 10px 0 0 0; padding: 6px 0; border-radius: 4px; background: #EE8A0B; text-transform: uppercase; text-align: center; cursor: pointer;}
+#clientsList div.container div.person form.balanceSummary div.item div.submit:hover{background: #CC770C;}
+#clientsList div.container div.person form.balanceSummary div.item input.submit{position: absolute; top: 0px; left: 0px; visibility: hidden;}
+#clientsList div.container div.person form.balanceSummary div.notice{margin: 10px 0 0 0; font-size: 10px; color: #D8D5D5; text-transform: uppercase;}
+
+/* COST */
+#clientsList div.container div.person form.cost{margin: 10px;}
+#clientsList div.container div.person form.cost div.tit{color: #F90; text-transform: uppercase; padding: 0 0 0 2px;}
+#clientsList div.container div.person form.cost div.content{padding: 10px; position: relative; border: 1px solid #888; background: rgba(0, 0, 0, .3); border-radius: 4px;}
+#clientsList div.container div.person form.cost div.block{width: 260px; float: left;}
+#clientsList div.container div.person form.cost div.block div.name{font-size: 12px;}
+#clientsList div.container div.person form.cost div.block input{width: 240px; padding: 4px; border: 1px solid #DDD; border-radius: 4px;}
+#clientsList div.container div.person form.cost div.submit{width: 275px; margin: 15px 0 0 0; padding: 4px 0; border-radius: 4px; background: #EE8A0B; text-transform: uppercase; text-align: center;
+cursor: pointer;}
+#clientsList div.container div.person form.cost div.submit:hover{background: #CC770C;}
+#clientsList div.container div.person form.cost input.submit{position: absolute; top: 0px; left: 0px; visibility: hidden;}
+/* CLIENTS FORM */
+#clientsList div.container div.person form.form{margin: 10px;}
+#clientsList div.container div.person form.form div.tit{color: #F90; text-transform: uppercase; padding: 0 0 0 2px;}
+#clientsList div.container div.person form.form div.content{padding: 10px; position: relative; border: 1px solid #888; background: rgba(0, 0, 0, .3); border-radius: 4px;}
+#clientsList div.container div.person form.form div.block{width: 260px; float: left;}
+#clientsList div.container div.person form.form div.block div.name{font-size: 12px;}
+#clientsList div.container div.person form.form div.block input{width: 240px; padding: 4px; border: 1px solid #DDD; border-radius: 4px;}
+#clientsList div.container div.person form.form div.submit{width: 275px; margin: 15px 0 0 0; padding: 4px 0; border-radius: 4px; background: #EE8A0B; text-transform: uppercase; text-align: center;
+cursor: pointer;}
+#clientsList div.container div.person form.form div.submit:hover{background: #CC770C;}
+#clientsList div.container div.person form.form input.submit{position: absolute; top: 0px; left: 0px; visibility: hidden;}
+
+/* EVENT WINDOW */
+#eventWindow{z-index: 8020;}
+#eventWindow div.content{height:546px; overflow: auto; padding: 10px;}
+#eventWindow div.content div.status{font-size: 12px; color: gray; background: rgba(0,0,0,.5); border-radius: 4px; padding: 4px; margin: 0 0 8px 0; text-align: center;}
+#eventWindow div.content div.status strong{color: #e1e1e1; text-transform: uppercase;}
+#eventWindow div.content div.mainContent{margin: 30px 0;}
+#eventWindow div.content div.title{font-size: 22px;}
+#eventWindow div.content div.message{font-size: 14px; color: #a7a7a7}
+#eventWindow div.content div.message strong{color: #a1c410;}
+#eventWindow div.content div.history{background: rgba(0,0,0,.5); margin: 10px 0; border-radius: 6px; padding: 6px; display: none;}
+#eventWindow div.content div.history.active{display: block;}
+#eventWindow div.content div.history div.line{padding: 8px; background: rgba(0,0,0,.5); margin: 0 0 8px 0; border-radius: 6px;}
+#eventWindow div.content div.history div.line div.time{font-size: 12px; color: gray;}
+#eventWindow div.content div.history div.line div.manager_id{font-size: 12px; text-transform: uppercase;}
+#eventWindow div.content div.history div.line div.comment{margin: 8px 0 0 0; font-size: 12px;}
+
+#eventWindow div.content div.breakline{clear: both; background: rgb(97, 97, 97); height: 1px; margin: 8px 0;}
+#eventWindow div.content div.comment{}
+#eventWindow div.content div.comment textarea{width: 98%; height: 100px; border: 0; background: white; border-radius: 6px; padding: 1%; font-size: 14px;}
+#eventWindow div.content input.submit{display: block; background: #a1c410; border: 0; border-radius: 4px; text-transform: uppercase; padding: 8px 0px; width: 100%; cursor: pointer;}
+#eventWindow div.content input.submit:hover{background: #89a70b;}
+
+/* EVENTS LIST */
+#eventsList{z-index: 8010;}
+#eventsList div.content{height:546px; overflow: auto; padding: 10px;}
+#eventsList div.content div.line{background: rgba(0,0,0,.5); border: 1px solid black; border-radius: 6px; margin: 0 0 8px 0; padding: 6px; -webkit-transition: background .5s; position: relative;}
+#eventsList div.content div.line:hover{border: 1px solid #777; background: rgba(20,20,20,.5);}
+#eventsList div.content div.line div.time{font-size: 12px; color: #777; border-bottom: 1px solid #555;}
+#eventsList div.content div.line div.time span.status{color: #89a70b; padding: 0 10px 0 0; text-transform: uppercase;}
+#eventsList div.content div.line div.time span.status.open{color: #89a70b;}
+#eventsList div.content div.line div.time span.status.process{color: #777;}
+#eventsList div.content div.line div.time span.status.closed{color: #56b4db;}
+#eventsList div.content div.line div.title{margin: 6px 0 0 0;}
+#eventsList div.content div.line div.message{font-size: 12px; color: #b5b5b5; margin: 2px 0 0 0;}
+#eventsList div.content div.line div.message strong{color: #e9e9e9;}
+#eventsList div.content div.line div.button{font-size: 12px; text-transform: uppercase; text-align: center; background: #a1c410; padding: 4px 0; border-radius: 6px; cursor: pointer; margin: 8px 0 0 0;}
+#eventsList div.content div.line div.button:hover{background: #89a70b;}
+
+/* MESSAGES */
+#messages{position: absolute; right: 0px; bottom: 40px; z-index:7000; border:0px solid #ddd; overflow: hidden; padding: 0 10px;}
+/* CHAT */
+#chat{position: relative; margin: 0 0 0px 0; opacity: 0; border:1px solid #999999; border-radius:4px; background:url('/images/white70.png'); padding: 6px 10px; -webkit-transition: margin .5s, opacity .5s;}
+#chat.active{opacity: 1;}
+#chat div.close{width:16px; height:16px; cursor:pointer; position:absolute; top:2px; right:2px; background:url('/images/close_20x20.png') no-repeat center center;}
+#chat div.content{}
+#chat div.content div.title{font-size:14px; font-weight:bold;}
+#chat div.content div.message{font-size:12px;}
+
+/* Request */
+#req{width: 420px; height: 90px; position: relative; z-index:7000; margin: 0 0 -100px 0; opacity: 0; -webkit-transition: margin 1s, opacity 1s; box-shadow: 2px 2px 16px #777; background: rgba(0,0,0, .5); padding: 4px; border-radius: 6px;}
+#req.active{margin: 0 0 10px 0; opacity: 1;}
+#req div.close{width:16px; height:16px; cursor:pointer; position:absolute; top:2px; right:2px; background:url('/images/close_20x20.png') no-repeat center center; display: none;}
+#req div.wrapper{height: 78px; overflow: hidden; border:0px solid #999999; border-radius:4px; background: rgba(255,255,255,.85); position: absolute; top: 16px; left: 2px;}
+#req div.wrapper div.item{position: relative; width: 402px; height: 66px; padding: 6px 10px; border-bottom: 1px solid #ddd;}
+#req div.wrapper div.item.warning{background: rgba(255,0,0,.2);}
+#req div.wrapper div.item div.time{font-size:10px;}
+#req div.wrapper div.item div.title{font-size:14px; font-weight:bold; color: black;}
+#req div.wrapper div.item div.message{font-size:12px; height: 26px;}
+#req div.wrapper div.item div.button{text-transform: uppercase; font-size: 12px; background: #a1c410; padding: 4px 0; text-align: center; border-radius: 5px; margin: 4px 0 0 0; cursor: pointer; color: #414437; font-weight: bold;}
+#req div.wrapper div.item div.button:hover{background: #89a70b;}
+
+#req div.count{position: relative; font-size: 10px; text-transform: uppercase; color: #ececec;}
+
+/* VERSION */
+#version{position:absolute; z-index:7100; top:10px; right:50px; border:1px solid #999999; border-radius: 4px; background:url('/images/white70.png'); padding: 8px 10px; text-align:right;}
+#version div.close{width:16px; height:16px; cursor:pointer; position:absolute; top:2px; right:2px; background:url('/images/close_20x20.png') no-repeat center center;}
+#version div.content{}
+#version div.content div.title{font-size:14px; font-weight:bold;}
+#version div.content div.message{font-size:12px;}
+
+/* Layers */
+#layers{width: 300px; position: absolute; z-index: 7200; top: 70px; right: 10px; border: 1px solid #999; border-radius: 4px; background: rgba(0,0,0,.5); padding: 2px; text-align: left;}
+#layers div.title{text-transform: uppercase; background: #8DA7B9; border-radius: 4px; padding: 2px 4px; color: #fff;}
+#layers div.clearAll{position: absolute; top: 5px; right: 5px; color: #000; background: #E9E6D4; font-size: 10px; padding: 2px 10px; border-radius: 4px; text-transform: uppercase; cursor: pointer;}
+#layers div.clearAll:hover{background: #FFF;}
+#layers div.line{background: rgba(0, 0, 0, .5); margin: 2px 0 0 0; color: #FFF; padding: 2px 0;}
+#layers div.line div.color{width: 18px; height: 18px; margin: 0 8px 0 2px; border-radius: 2px; float: left; background: #F00;}
+#layers div.line div.number{float: left; text-transform: uppercase;}
+#layers div.line div.clear{width: 80px; text-transform: uppercase; text-align: center; font-size: 12px; float: right; cursor: pointer; background: #739726; padding: 2px 4px; border-radius: 4px;}
+#layers div.line div.clear:hover{background: #5C7721;}
+
+/* ROUTING POPUP */
+#routingPopup{padding: 4px;}
+#routingPopup div.number{text-transform: uppercase; font-size: 12px;}
+#routingPopup strong{color: black;}
+
+/* MARKERS */
+#map div.marker{}
+#map div.marker div.icon{background-repeat: no-repeat; background-position: center center;}
+#map div.marker.default div.icon{width: 40px; height: 60px; background: url('/images/map/marker-rent.png') no-repeat center center; position: absolute; bottom: 0px; left: -14px; z-index: 10;}
+#map div.marker.default div.shadow{width: 46px; height: 42px; background: url('/images/map/marker-shadow.png') no-repeat center center; position: absolute; bottom: -2px; left: -7px; z-index: 5; pointer-events:none;}
+#map div.marker.default div.sign{position: absolute; top: -74px; left: 1px; pointer-events:none; z-index: 20;}
+#map div.marker.default.error div.sign{width: 10px; height: 24px; background: url('/images/map/error.png')  no-repeat center center;}
+
+#map div.marker.drive{}
+#map div.marker.drive div.icon{width: 42px; height: 42px; background: url('/images/map/marker-rent.png') no-repeat center center; position: absolute; bottom: -14px; left: -15px; z-index: 10;}
+#map div.marker.drive div.shadow{display: none;}
+#map div.marker.drive div.sign{position: absolute; top: -42px; left: 1px; pointer-events:none; z-index: 20;}
+#map div.marker.drive.error div.sign{width: 10px; height: 24px; background: url('/images/map/error.png')  no-repeat center center;}
+
+
+#map div.marker.rent.default div.icon{background: url('/images/map/marker-rent.png') no-repeat center center;}
+#map div.marker.rent.drive div.icon{background: url('/images/map/marker-rent-drive.png') no-repeat center center;}
+
+#map div.marker.rent.default.vw div.icon{background-image: url('/images/map/marker-rent-vw.png?q=2');}
+#map div.marker.rent.default.bmw div.icon{background-image: url('/images/map/marker-rent-bmw.png?q=2');}
+#map div.marker.rent.default.chevrolet div.icon{background-image: url('/images/map/marker-rent-chevrolet.png?q=2');}
+
+#map div.marker.book.default div.icon{background: url('/images/map/marker-book.png') no-repeat center center;}
+#map div.marker.book.drive div.icon{background: url('/images/map/marker-book-drive.png') no-repeat center center;}
+
+#map div.marker.book.default.vw div.icon{background-image: url('/images/map/marker-book-vw.png?q=2');}
+#map div.marker.book.default.bmw div.icon{background-image: url('/images/map/marker-book-bmw.png?q=2');}
+#map div.marker.book.default.chevrolet div.icon{background-image: url('/images/map/marker-book-chevrolet.png?q=2');}
+
+#map div.marker.free.default div.icon{background: url('/images/map/marker-free.png') no-repeat center center;}
+#map div.marker.free.drive div.icon{background: url('/images/map/marker-free-drive.png') no-repeat center center;}
+
+#map div.marker.free.default.vw div.icon{background-image: url('/images/map/marker-free-vw.png?q=2');}
+#map div.marker.free.default.bmw div.icon{background-image: url('/images/map/marker-free-bmw.png?q=2');}
+#map div.marker.free.default.chevrolet div.icon{background-image: url('/images/map/marker-free-chevrolet.png?q=2');}
+
+#map div.marker.service.drive div.icon{background: url('/images/map/marker-service-drive.png') no-repeat center center;}
+#map div.marker.service.default div.icon{background: url('/images/map/marker-service.png') no-repeat center center;}
+
+#map div.marker.service.default.vw div.icon{background-image: url('/images/map/marker-service-vw.png?q=2');}
+#map div.marker.service.default.bmw div.icon{background-image: url('/images/map/marker-service-bmw.png?q=2');}
+#map div.marker.service.default.chevrolet div.icon{background-image: url('/images/map/marker-service-chevrolet.png?q=2');}
+
+#map div.marker.dispatcher.default div.icon{background: url('/images/map/marker-dispatcher.png') no-repeat center center;}
+#map div.marker.dispatcher.drive div.icon{background: url('/images/map/marker-dispatcher-drive.png') no-repeat center center;}
+
+
+#map .leaflet-popup{}
+#map div.leaflet-popup-content div.info{padding: 6px;}
+#map .leaflet-popup div.color{width: 180px; height: 70px; background-position: center center; background-repeat: no-repeat;}
+#map .leaflet-popup div.color.white{background-image: url('/images/car/white.png');}
+#map .leaflet-popup div.color.black{background-image: url('/images/car/black.png');}
+#map .leaflet-popup div.color.deepblue{background-image: url('/images/car/deepblue.png');}
+#map .leaflet-popup div.color.gray{background-image: url('/images/car/gray.png');}
+#map .leaflet-popup div.color.lightgray{background-image: url('/images/car/lightgray.png');}
+#map .leaflet-popup div.color.red{background-image: url('/images/car/red.png');}
+
+/* CAR COLOR */
+div.carColor{width: 180px; height: 80px; background-position: center center; background-repeat: no-repeat;}
+div.carColor.VW-Polo.white{background-image: url('/images/car/VW-Polo-white.png');}
+div.carColor.VW-Polo.black{background-image: url('/images/car/VW-Polo-black.png');}
+div.carColor.VW-Polo.deepblue{background-image: url('/images/car/VW-Polo-deepblue.png');}
+div.carColor.VW-Polo.gray{background-image: url('/images/car/VW-Polo-gray.png');}
+div.carColor.VW-Polo.lightgray{background-image: url('/images/car/VW-Polo-lightgray.png');}
+div.carColor.VW-Polo.red{background-image: url('/images/car/VW-Polo-red.png');}
+
+div.carColor.BMW-116i.white{background-image: url('/images/car/BMW-116i-white.png');}
+div.carColor.BMW-116i.bronze{background-image: url('/images/car/BMW-116i-bronze.png');}
+
+div.carColor.Chevrolet-Cruze.white{background-image: url('/images/car/Chevrolet-Cruze-white.png');}
+
+
+
+
+#map .leaflet-popup div.number{text-transform: uppercase; font-size: 18px; font-weight: bold; text-align: center; background: #d9d9d9; border-radius: 5px; margin: 0 0 4px 0;}
+#map .leaflet-popup div.info.rent div.number{background: #edc8c3;}
+#map .leaflet-popup div.info.book div.number{background: #a0c40f;}
+#map .leaflet-popup div.info.free div.number{background: #93c7df;}
+#map .leaflet-popup div.info.service div.number{background: #faca08;}
+#map .leaflet-popup div.info.dispatcher div.number{background: #d9d9d9;}
+
+#map .leaflet-popup div.line{clear: both; padding: 0 6px;}
+#map .leaflet-popup div.line div.name{width: 80px; float: left; padding: 2px 0 0 0;}
+#map .leaflet-popup div.line div.value{color: black; font-size: 14px; float: left; font-weight: bold;}
+#map .leaflet-popup div.line div.value span{color: red;}
+#map .leaflet-popup div.line.error div.value{background: #FF9E9E; color: #000; padding: 2px 4px; border-radius: 2px; border: 1px solid #F00;}
+
+#map .leaflet-popup div.line.active{ border-radius: 5px; text-align: center; color: white; padding: 2px 0;}
+#map .leaflet-popup div.line.active.online{background: #89a70b;}
+#map .leaflet-popup div.line.active.offline{background: red;}
+
+#map .leaflet-popup div.button{clear: both; margin: 6px 0 0 0; padding: 4px 0px; background: #ababab; text-transform: uppercase; text-align: center; cursor: pointer; border-radius: 5px;}
+#map .leaflet-popup div.button:hover{background: #808080; color: white;}
+
+
+#transferList{}
+#transferList div.content{font-size: 14px;}
+#transferList div.content div.list{height: 530px; overflow: auto;}
+#transferList div.content div.line{border-top: 1px solid #5C594C; border-bottom: 1px solid #383530; background: rgba(0,0,0,0); -webkit-transition: background 1s;}
+#transferList div.content div.line:hover{background: rgba(0,0,0,.5);}
+#transferList div.content div.line div.col{float: left; padding: 10px 6px 0 6px;}
+#transferList div.content div.line div.col.timestamp{width: 40px; font-size: 12px; text-align: center; padding: 6px;}
+#transferList div.content div.line div.col.timestamp strong{color: #C7BB97;}
+#transferList div.content div.line div.col.id{width: 30px; text-align: center;}
+#transferList div.content div.line div.col.login{width: 80px;}
+#transferList div.content div.line div.col.name{width: 100px;}
+#transferList div.content div.line div.col.card{width: 42px;}
+#transferList div.content div.line div.col.order{width: 60px;}
+#transferList div.content div.line div.col.amount{width: 60px;}
+#transferList div.content div.line div.col.currency{width: 30px; text-transform: uppercase; text-align: center;}
+#transferList div.content div.line div.col.rc{width: 30px; text-align: center;}
+#transferList div.content div.line div.col.rrn{width: 90px; font-size: 12px;}
+#transferList div.content div.line div.col.int_ref{width: 116px; font-size: 12px;}
+#transferList div.content div.line div.col.message{width: 100px; font-size: 12px;}
+#transferList div.content div.line div.col.status{}
+#transferList div.content div.line div.col.status.success{color: #62C22C;}
+#transferList div.content div.line div.col.status.error{color: #FF0000;}
+#transferList div.content div.line div.col.status.waiting{color: #55AEE9;}
+#transferList div.content div.line.title{background: #000; padding: 10px 0; border: 0;}
+#transferList div.content div.line.title div.col{padding: 0 6px; font-size: 14px; color: white;}
+
+/* REPORTS LIST */
+#reportsList{}
+#reportsList div.container div.content{height:566px; overflow: auto;}
+#reportsList div.line{background: rgba(0,0,0,.2); -webkit-transition: background .3s; border-radius: 4px; margin: 2px 4px; padding: 4px 4px 4px 10px;}
+#reportsList div.line:hover{background: rgba(0,0,0,.5);}
+#reportsList div.line div.name{float: left; font-size: 12px; text-transform: uppercase; padding: 2px 0 0 0;}
+#reportsList div.line a.download{float: right; background: #9AC511; color: #222; padding: 2px 20px; font-size: 12px; text-transform: uppercase; border-radius: 4px;}
+#reportsList div.line a.download:hover{background: #81A50E;}

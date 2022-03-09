@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+
+  delitime-control:
+    container_name: test
+    build:
+      context: .
+      dockerfile: enved.apache.Dockerfile
+    env_file:
+      - .env
+    environment:
+      - VIRTUAL_HOST=111
+      - SITE_URL_NAME=222
+      - BASE_URL=333
+      - REDIS_HOST=redis
+      - WS_URL=444
+    command: bash -c "cd ./c && composer install && composer dump -o && exec apache2ctl -DFOREGROUND"
+    volumes:
+      - ./mnt/data/:/mnt/data/
+      - ./:/var/www
+      - source: session_volume
+        target: /var/lib/php/sessions
+        type: volume
+    networks:
+      - default
+      -
+networks:
+  default:
+    external:
+      name: dev-env
+
+volumes:
+  session_volume:

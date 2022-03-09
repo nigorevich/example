@@ -1,0 +1,29 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: low-fuel
+spec:
+  schedule: "*/2 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          imagePullSecrets:
+          - name: regcred
+          containers:
+          - name: low-fuel
+            image: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/main:$CI_COMMIT_TAG
+            args:
+            - /usr/bin/php
+            - /var/www/c/cron/low-fuel.php
+            envFrom:
+              - configMapRef:
+                  name: delitime-control-env
+            resources:
+              requests:
+                cpu: "0.15"
+                memory: "256Mi"
+              limits:
+                cpu: "0.3"
+                memory: "512Mi"
+          restartPolicy: OnFailure
